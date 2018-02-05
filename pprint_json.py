@@ -11,9 +11,9 @@ def load_data(filepath):
         return 0
 
 
-def pretty_print_json(data):
+def pretty_print_json(input_file):
     try:
-        json_data = json.load(data)
+        json_data = json.load(input_file)
     except ValueError:
         print("This is not JSON")
     else:
