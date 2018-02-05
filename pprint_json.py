@@ -5,8 +5,8 @@ import os
 
 def load_data(filepath):
     if os.path.isfile(filepath):
-        data = open(filepath, 'r')
-        return data
+        input_file = open(filepath, 'r')
+        return input_file
     else:
         return 0
 
