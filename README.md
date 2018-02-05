@@ -1,17 +1,23 @@
 # Prettify JSON
 
-[TODO. There will be project description]
+The script displays to the console the JSON with indentations and hyphens.
 
 # Quickstart
-
-[TODO]
-
+For example, if the test file like this:
+```text
+[{"First Name": "Ivan", "Last Name": "Petrov"}]
+```
 Example of script launch on Linux, Python 3.5:
 
 ```bash
 
-$ python pprint_json.py <path to file>
-# TODO add output example
+$ python pprint_json.py test
+[
+    {
+        "First Name": "Ivan",
+        "Last Name": "Petrov"
+    }
+]
 
 ```
 
