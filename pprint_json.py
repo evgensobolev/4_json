@@ -13,20 +13,20 @@ def load_data(filepath):
 
 def pretty_print_json(data):
     try:
-        jl = json.load(data)
+        json_data = json.load(data)
     except ValueError:
         print("This is not JSON")
     else:
-        print(json.dumps(jl, ensure_ascii=False, sort_keys=True, indent=4))
+        print(json.dumps(json_data, ensure_ascii=False, sort_keys=True, indent=4))
 
 
 if __name__ == '__main__':
     if sys.argv.__len__() == 1:
         print("You did not enter a file name")
     else:
-        lf = load_data(sys.argv[1])
-        if lf == 0:
+        json_file = load_data(sys.argv[1])
+        if json_file == 0:
             print("This file does not exist")
         else:
-            pretty_print_json(lf)
-            lf.close()
+            pretty_print_json(json_file)
+            json_file.close()
