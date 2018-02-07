@@ -3,8 +3,11 @@ import sys
 
 
 def load_data(filepath):
-    with open(filepath, 'r') as input_file:
-        return json.load(input_file)
+    try:
+        with open(filepath, 'r') as input_file:
+            return json.load(input_file)
+    except ValueError:
+        return None
 
 
 def pretty_print_json(json_data):
@@ -12,6 +15,13 @@ def pretty_print_json(json_data):
 
 
 if __name__ == '__main__':
-    json_data = load_data(sys.argv[1])
-    if json_data:
-        pretty_print_json(json_data)
+    try:
+        json_data = load_data(sys.argv[1])
+        if json_data:
+            pretty_print_json(json_data)
+        else:
+            print('This file is not JSON')
+    except IndexError:
+        print('No path JSON file')
+    except FileNotFoundError:
+        print('File not fount')
